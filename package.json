@@ -1,20 +1,10 @@
 {
-  "name": "discord-bot",
+  "name": "skankhunt42-bot",
   "version": "1.0.0",
-  "private": true,
   "main": "bot.js",
-  "scripts": {
-    "start": "node ./bin/www"
-  },
+  "license": "MIT",
   "dependencies": {
-    "body-parser": "~1.18.2",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
     "discord.io": "github:woor/discord.io#gateway_v6",
-    "express": "~4.15.5",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5",
-    "winston": "^2.4.0"
+    "winston": "^2.3.1"
   }
 }
