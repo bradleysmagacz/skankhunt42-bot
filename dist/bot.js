@@ -10,14 +10,13 @@ logger.add(logger.transports.Console, {
 });
 logger.level = 'debug';
 
-
 // Initialize Discord Bot
 const bot = new Discord.Client({
   token: auth.token,
   autorun: true
 });
 
-bot.on('ready', (evt) => {
+bot.on('ready', evt => {
   logger.info('Connected');
   logger.info('Logged in as: ');
   logger.info(bot.username + ' - (' + bot.id + ')');
@@ -32,8 +31,8 @@ bot.on('message', (user, userId, channelId, message, evt) => {
 
     args = args.splice(1);
 
-    const sendBotMessage = (msg) => {
-      bot.sendMessage({to: channelId, message: typeof msg === 'string' ? msg : JSON.stringify(msg) })
+    const sendBotMessage = msg => {
+      bot.sendMessage({ to: channelId, message: typeof msg === 'string' ? msg : JSON.stringify(msg) });
     };
 
     const guildId = '401505727912476682';
@@ -60,15 +59,15 @@ bot.on('message', (user, userId, channelId, message, evt) => {
     }
   }
 
-    // const commandList = {
-    //   ping: () => sendBotMessage('Pong!'),
-    //   // inv: getUserInvites,
-    //   members: () => { discordService.get(membersUrl).then(res => sendBotMessage(res)),
-    //   roles: () => discordService.get(rolesUrl).then(res => sendBotMessage(res)),
-    // };
-    //
-    // const runBotCommand = (command) => commandList[command] || sendBotMessage('Unknown command.');
-    //
-    // return runBotCommand(cmd);
+  // const commandList = {
+  //   ping: () => sendBotMessage('Pong!'),
+  //   // inv: getUserInvites,
+  //   members: () => { discordService.get(membersUrl).then(res => sendBotMessage(res)),
+  //   roles: () => discordService.get(rolesUrl).then(res => sendBotMessage(res)),
+  // };
+  //
+  // const runBotCommand = (command) => commandList[command] || sendBotMessage('Unknown command.');
+  //
+  // return runBotCommand(cmd);
   // }
 });
