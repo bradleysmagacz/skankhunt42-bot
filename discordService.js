@@ -5,7 +5,7 @@ class DiscordService {
   constructor() {
     this.discordApiBase = 'https://discordapp.com/api';
     this.authHeader = {
-      Authorization: 'Bot ' + auth.token
+      Authorization: `Bot ${auth.token}`
     };
   }
 
